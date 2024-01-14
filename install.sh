@@ -8,7 +8,6 @@ sudo ./install.sh
 cd /home/pi/
 sudo rm -rf log2ram-master/
 rm log2ram.tar.gz
-#sudo reboot
 sudo systemctl daemon-reload
 sudo systemctl enable log2ram
 sudo systemctl restart log2ram
@@ -33,4 +32,6 @@ WantedBy=multi-user.target" > /etc/systemd/system/node_exporter.service
 sudo systemctl daemon-reload 
 sudo systemctl enable node_exporter.service
 sudo systemctl restart node_exporter.service
+sudo rm -rf node_exporter-1.7.0.linux-armv7
+rm node_exporter-1.7.0.linux-armv7.tar.gz
 
