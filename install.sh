@@ -19,7 +19,7 @@ sudo chmod +x /usr/local/bin/node_exporter
 sudo useradd -m -s /bin/bash node_exporter
 sudo mkdir /var/lib/node_exporter
 sudo chown -R node_exporter:node_exporter /var/lib/node_exporter
-echo "[Unit]
+sudo echo "[Unit]
 Description=Node Exporter
 
 [Service]
