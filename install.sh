@@ -19,7 +19,6 @@ sudo chmod +x /usr/local/bin/node_exporter
 sudo useradd -m -s /bin/bash node_exporter
 sudo mkdir /var/lib/node_exporter
 sudo chown -R node_exporter:node_exporter /var/lib/node_exporter
-sudo cd /etc/systemd/system/
 echo "[Unit]
 Description=Node Exporter
 
@@ -29,7 +28,8 @@ Description=Node Exporter
 ExecStart=/usr/local/bin/node_exporter --collector.textfile.directory /var/lib/node_exporter/textfile_collector
 
 [Install]
-WantedBy=multi-user.target" > node_exporter.service
+WantedBy=multi-user.target" > /etc/systemd/system/node_exporter.service
+
 sudo systemctl daemon-reload 
 sudo systemctl enable node_exporter.service
 sudo systemctl restart node_exporter.service
